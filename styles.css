@@ -7,9 +7,11 @@
     box-sizing: border-box;
     text-decoration: none;
     font-family: "Outfit", sans-serif;
+    
 }
 body{
     background-color: #FCF5EE;
+    
 }
 hr{
 
@@ -109,7 +111,7 @@ button{
 
 
 #inicio{
-   
+    position: relative;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -117,55 +119,171 @@ button{
     flex-direction: column;
 }
 
-
-
-.apresentacao-inicio{
-   
-    height: 30rem;
-    width: 85%;
+.janela-carrinho{
+    position: absolute;
+    
+    height: 300px;
+    width: 500px;
+    top: 29%;
+    left: 29%;
     margin: 0 auto;
+    z-index: 999;
+    position: fixed;
+    margin-bottom: 150px;
+    display: none;
+    background-color: whitesmoke;
+    animation: animate 0.5s;
    
+}
+@keyframes animate{
+    0%{
+        transform: scale(0.8);
+        opacity: 0.8;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
 
-    position: relative;
+}
+.sombra{
   
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    position: absolute;
+    height: 200vh;
+    width: 200vw;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    position: fixed;
+}
+.janela-carrinho .title{
+    position: relative;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 20px;
+    border-bottom:2px solid #10100F;
+    font-size: 20px;
+    text-transform: uppercase;
+   
+}
+
+.janela-carrinho span{
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+/*slider*/
+.apresentacao-inicio{ 
+    height: 30rem;
+    width: 1100px;
+    margin: 0 auto;
+    position: relative; 
     margin-inline: auto;
     overflow: hidden;
-    transition: 0.5s;
+    
+    
+ 
 
 
     
 }
-.change-button{
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-    margin-top: 10px;
-}
-.change-button .button{
-    height: 25px;
-    width: 25px;
-    cursor: pointer;
-    opacity: 0.2;
-   
-   
-   
-}
 
+/*slides*/
+.slides{
+    width: 300%;
+    height: 31rem;
+    display: flex;
+ 
+   
+    
+    
+}
+.slides input{
+  display: none;
+ }
 .apresentacao-conteiner {
     height: 30rem;
-    width: 100%;
+    width: 33.33%;
     display: flex;
     justify-content: space-between;
     background-color: #FCF5EE;
- 
+    position: relative;
+    transition: 1s ease;
+    
 
     
 }
+.manual-navigation{
+    position: absolute;
+    width: 1100px;
+    
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    bottom: 0;
+    
+}
 
+.manual-btn{
+    border: 2px solid black;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+    opacity: 0.5;
+    border-radius: 10px;
+    transition: 0.5s;
+   
+   
+}
+.manual-btn:hover{
+    background-color: #10100F;
+}
 
+#item1:checked ~ .first{
+    margin-left: 0;
+}
+#item2:checked ~ .first{
+    margin-left: -33.33%;
+}
+#item3:checked ~ .first{
+    margin-left: -66.66%;
+}
+.navigation-auto div{
+    border: 2px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+    height: 20px;
+    width: 20px;
+}
+.navigation-auto{
+    position: absolute;
+    width: 1100px;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
 
-
-
+#item1:checked ~ .navigation-auto .auto-btn1{
+background-color: #10100F;
+}
+#item2:checked ~ .navigation-auto .auto-btn2{
+background-color: #10100F;
+}
+#item3:checked ~ .navigation-auto .auto-btn3{
+background-color: #10100F;
+}
 
 .div1,.div2{
     height: 30rem;
@@ -175,7 +293,8 @@ button{
   
 }
 .div2 img{
-    height: 30rem;
+    height: 29rem;
+    top: 0;
     margin-left: 50px;
 }
 .div1{
@@ -338,7 +457,7 @@ button{
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    width: 80vw;
+    width: 50vw;
 }
 #category-types span{
    

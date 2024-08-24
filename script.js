@@ -1,3 +1,8 @@
+
+function navigateTo(href) {
+  window.location.hash = href;
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   let productSection = document.querySelector('.products-section');
 
@@ -66,32 +71,41 @@ document.addEventListener('DOMContentLoaded', function () {
   fetchProdutos('https://fakestoreapi.com/products');
 });
 
+function acao() {
+  event.preventDefault()
+  let janela = document.querySelector('.janela-carrinho');
+  let sombra = document.querySelector('.sombra');
 
-function navigateTo(href) {
-    window.location.hash = href;
+ 
+  if (janela.style.display === 'none' || janela.style.display === '') {
+    janela.style.display = 'block'; 
+    sombra.style.display = 'block'; 
+
+   
+    
+   
+
+  } else {
+    sombra.style.display = 'none';
+    janela.style.display = 'none'; 
+  }
+     
 }
 
 
-async function fetchTotalProducts(url) {
-  let totalProducts = 0;
-  let page = 1;
-  const pageSize = 20; // Ajuste de acordo com a paginação da API
-  let hasMoreProducts = true;
+let count = 1;
 
-  while (hasMoreProducts) {
-      const response = await fetch(`${url}?limit=${pageSize}&page=${page}`);
-      const data = await response.json();
+document.getElementById('item1').checked = true
 
-      if (data.length === 0) {
-          hasMoreProducts = false;
-      } else {
-          totalProducts += data.length;
-          page++;
-      }
+setInterval(function(){
+ nextImage()
+},10000)
+
+function nextImage(){
+  count++
+  if(count > 3){
+    count = 1
   }
 
-  console.log(`Total de produtos: ${totalProducts}`);
-  return totalProducts;
+  document.getElementById('item'+ count).checked = true
 }
-
-fetchTotalProducts('https://fakestoreapi.com/products');

@@ -27,26 +27,48 @@
             </form>
             
         
-          
+         <span class="circle-icon" id="perfil">
+              <a href=""><img class="icon" src="https://assets.website-files.com/62d243bdaa648f8b5efa8fc1/62d3e9d819f62ce31ee02fdb_header-user-icon.svg" alt=""></a>
+         </span>
+
+      
          
-          <span class="circle-icon">
+          <span onclick="acao()" class="circle-icon" id="carrinho" >
             <a href=""><img class="icon" src="https://assets.website-files.com/62d243bdaa648f8b5efa8fc1/62d3e9d8b7f9bc09832f22e1_header-cart-icon.svg" alt=""></a>
           </span>
 
-          <span class="circle-icon">
-            <a href=""><img class="icon" src="https://assets.website-files.com/62d243bdaa648f8b5efa8fc1/62d3e9d819f62ce31ee02fdb_header-user-icon.svg" alt=""></a>
-          </span>
+          
         </nav>
  
      </header>
 
 
     <section id="inicio">
+      
+     <div class="sombra">
+      <div class="janela-carrinho">
+         <div class="title">Seu carrinho</div>
+         <span onclick="acao()"><i class="fa-solid fa-x"></i></span>
+      </div>
+     </div> 
+
+
         <div class="apresentacao-inicio">
+          <div class="slides">
+         
+           
+                <input type="radio" class="button" name="navigate" id="item1">
+
+                <input type="radio" class="button" name="navigate" id="item2">
+
+                <input type="radio" class="button" name="navigate" id="item3" >
+               
+          
+         
 
 
 
-         <div class="apresentacao-conteiner " id="item1">
+         <div class="apresentacao-conteiner first" id="item1">
             <div class="div1">
                 <p>Mega oferta de 45% de desconto</p>
 
@@ -104,23 +126,26 @@
           
 
 
+            
+          <div class="navigation-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+          </div>
+
+         </div>
+           <div class="manual-navigation">
+             <label for="item1" class="manual-btn"></label>
+             <label for="item2" class="manual-btn"></label>
+             <label for="item3" class="manual-btn"></label>
+           </div>
+ 
 
         </div>
-        <div class="change-button">
-          <a href="#item1" ">
-              <input type="radio" class="button" name="navigate" id="item1" checked   onclick="navigateTo('#item1')">
-            
-          </a>
-          <a href="#item2" ">
-              <input type="radio" class="button" name="navigate" id="item2" onclick="navigateTo('#item2')">
-           
-          </a>
-          <a href="#item3" >
-              <input type="radio" class="button" name="navigate" id="item3" onclick="navigateTo('#item3')">
-             
-          </a>
-      </div>
-    </section>
+       
+
+        
+   </section>
 
   <!--------------------------------------------------------------------------------------------------->
     <section id="categorias">
@@ -131,7 +156,7 @@
           <p>NOVOS MODELOS</p>
           <h2>Nike Dunk: Ícone de Estilo e Desempenho</h2>
           <p class="descricao">Descubra o Nike Dunk, o tênis que une a tradição do basquete com a modernidade do streetwear</p>
-          <button>Compre agora</button>
+          <button >Compre agora</button>
           <img src="img/shoes.png" alt="">
         </div>
 
