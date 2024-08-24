@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <p id="liquidacao">Liquidação de Fim de Temporada: Economize até 70%!</p>
+    <hr>
+    <header id="header">
+        <div id="logo-div">
+        <a id="logo" href="#inicio"><img src="img/icons8-carrinho-48 (2).png" > E-commerce <br> Station</a>
+        
+      
+    </div>
+ 
+        <nav id="navbar">
+           
+            <form id="search-form">
+                <input type="text" id="barra-pesquisa" placeholder="Buscar">
+                <button id="search-button"><img src="img/icons8-pesquisar-24 (1).png" alt=""></button>
+            </form>
+            
+        
+          
+         
+          <span class="circle-icon">
+            <a href=""><img class="icon" src="https://assets.website-files.com/62d243bdaa648f8b5efa8fc1/62d3e9d8b7f9bc09832f22e1_header-cart-icon.svg" alt=""></a>
+          </span>
+
+          <span class="circle-icon">
+            <a href=""><img class="icon" src="https://assets.website-files.com/62d243bdaa648f8b5efa8fc1/62d3e9d819f62ce31ee02fdb_header-user-icon.svg" alt=""></a>
+          </span>
+        </nav>
+ 
+     </header>
+
+
+    <section id="inicio">
+        <div class="apresentacao-inicio">
+
+
+
+         <div class="apresentacao-conteiner " id="item1">
+            <div class="div1">
+                <p>Mega oferta de 45% de desconto</p>
+
+                <h2>Moveis exclusivos e elegantes</h2>
+                <p class="descricao">Descubra nossa coleção de móveis projetados para adicionar sofisticação e conforto ao seu lar. Feitos com materiais de alta qualidade, cada peça é única e oferece o equilíbrio perfeito entre estilo e funcionalidade.</p>
+
+                <button>Compre agora</button>
+            </div>
+
+            <div class="div2">
+                <img src="img/img1.png" alt="">
+            </div>
+            
+          </div>
+
+
+
+
+
+
+          <div  class="apresentacao-conteiner" id="item2">
+            <div class="div1">
+                <p>Mega oferta de 60% de desconto</p>
+
+                <h2>Eletrônicos de Última Geração</h2>
+                <p class="descricao">Explore nossa seleção de eletrônicos inovadores, projetados para elevar sua experiência tecnológica. Desde smartphones e laptops até gadgets inteligentes, cada produto é cuidadosamente escolhido para oferecer desempenho superior e design moderno.</p>
+
+                <button>Compre agora</button>
+            </div>
+
+            <div class="div2">
+                <img src="img/headphone.png" alt="">
+            </div>
+            
+          </div>
+
+
+
+
+
+
+          <div class="apresentacao-conteiner" id="item3">
+            <div class="div1">
+                <p>Mega oferta de 45% de desconto</p>
+
+                <h2>Roupas Modernas e Elegantes</h2>
+                <p class="descricao">Descubra nossa coleção de roupas que combinam estilo contemporâneo com conforto excepcional. Desde peças casuais para o dia a dia até opções sofisticadas para ocasiões especiais, cada item é confeccionado com materiais de alta qualidade e atenção aos detalhes.</p>
+                <button>Compre agora</button>
+            </div>
+            <div class="div2">
+                <img src="img/clothes.png" alt="">
+            </div>
+            
+          </div>
+          
+
+
+
+        </div>
+        <div class="change-button">
+          <a href="#item1" ">
+              <input type="radio" class="button" name="navigate" id="item1" checked   onclick="navigateTo('#item1')">
+            
+          </a>
+          <a href="#item2" ">
+              <input type="radio" class="button" name="navigate" id="item2" onclick="navigateTo('#item2')">
+           
+          </a>
+          <a href="#item3" >
+              <input type="radio" class="button" name="navigate" id="item3" onclick="navigateTo('#item3')">
+             
+          </a>
+      </div>
+    </section>
+
+  <!--------------------------------------------------------------------------------------------------->
+    <section id="categorias">
+      <div id="propagandas">
+
+
+        <div class="box box1">
+          <p>NOVOS MODELOS</p>
+          <h2>Nike Dunk: Ícone de Estilo e Desempenho</h2>
+          <p class="descricao">Descubra o Nike Dunk, o tênis que une a tradição do basquete com a modernidade do streetwear</p>
+          <button>Compre agora</button>
+          <img src="img/shoes.png" alt="">
+        </div>
+
+
+        <div class="box box2">
+          <p>
+            ATÉ 20% DE DESCONTO</p>
+          <h2>Moderno & Minimalista</h2>
+          <p class="descricao">Não perca a oportunidade de economizar</p>
+          <img src="img/sofa.png" alt="">
+          
+        </div>
+      </div>
+
+      <div id="chose-category">
+        <div class="title">
+         <h1>Escolha sua categoria</h1>
+         <p> Selecione seu produto em nossas opções de categoria</p>
+        </div>
+        <div id="category-types">
+          <span><img src="category-img/icons8-joalheria-50.png" alt="">Joias</span>
+          <span><img src="category-img/icons8-smartphone-50.png" alt="">Eletrônicos</span>
+          <span><img src="category-img/icons8-roupa-íntima-masculina-50.png" alt="">Roupas masculinas</span>
+          <span><img src="category-img/icons8-roupa-íntima-feminina-50.png" alt="">Roupas femininas</span>
+         
+        </div>
+      </div>
+    
+    </section>
+
+
+
+    <!----------------------------------------------------------------------------------------->
+    <section id="products">
+      <h1 class="title">Produtos</h1>
+      <div class="filtros"></div>
+    
+      <div class="products-section">
+
+     
+
+
+      </div>
+    </section>
+    
+
+    <script src="https://kit.fontawesome.com/2de831549c.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
