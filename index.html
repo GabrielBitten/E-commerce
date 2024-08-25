@@ -27,7 +27,7 @@
             </form>
             
         
-         <span class="circle-icon" id="perfil">
+         <span onclick="abrirPerfil()" class="circle-icon" id="perfil">
               <a href=""><img class="icon" src="https://assets.website-files.com/62d243bdaa648f8b5efa8fc1/62d3e9d819f62ce31ee02fdb_header-user-icon.svg" alt=""></a>
          </span>
 
@@ -49,6 +49,25 @@
       <div class="janela-carrinho">
          <div class="title">Seu carrinho</div>
          <span onclick="acao()"><i class="fa-solid fa-x"></i></span>
+      </div>
+
+
+      <div class="login-register">
+        <h1>Registre-se</h1>
+        <span onclick="abrirPerfil()"><i class="fa-solid fa-x"></i></span>
+        <form class="form-container" action="">
+          <label for="name">Nome</label>
+          <input type="text" placeholder="Informe seu nome">
+
+          <label for="email">E-mail</label>
+          <input type="email" name="email" id="email" placeholder="Informe seu e-mail">
+
+          <label for="password">Senha</label>
+          <input type="password" name="password" id="senha" placeholder="informe sua senha">
+
+          <button>Registrar-se</button>
+        </form>
+        <p>Já possui uma conta?login</p>
       </div>
      </div> 
 

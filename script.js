@@ -76,14 +76,12 @@ function acao() {
   let janela = document.querySelector('.janela-carrinho');
   let sombra = document.querySelector('.sombra');
 
+
  
   if (janela.style.display === 'none' || janela.style.display === '') {
     janela.style.display = 'block'; 
     sombra.style.display = 'block'; 
-
-   
-    
-   
+ 
 
   } else {
     sombra.style.display = 'none';
@@ -92,6 +90,19 @@ function acao() {
      
 }
 
+function abrirPerfil(){
+  event.preventDefault()
+  let login_register = document.querySelector('.login-register')
+  let sombra = document.querySelector('.sombra');
+  login_register.classList.toggle('active')
+
+  if (sombra.style.display === 'none' || sombra.style.display === '') {
+    sombra.style.display = 'block'; 
+  } else {
+    
+    sombra.style.display = 'none';
+  }
+}
 
 let count = 1;
 
