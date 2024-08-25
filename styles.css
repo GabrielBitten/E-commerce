@@ -180,6 +180,9 @@ button{
     opacity: 0.8;
 }
 
+.janela-carrinho.active{
+    visibility: visible;
+}
 
 
 .janela-carrinho{
@@ -193,9 +196,14 @@ button{
     z-index: 999;
     position: fixed;
     margin-bottom: 150px;
-    display: none;
+
     background-color: whitesmoke;
     animation: animate 0.5s;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
    
 }
 @keyframes animate{
@@ -225,7 +233,9 @@ button{
     position: fixed;
 }
 .janela-carrinho .title {
-    position: relative;
+    top: 0;
+    position: absolute;
+    width: 100%;
     display: flex;
     justify-content: start;
     align-items: center;
@@ -235,15 +245,105 @@ button{
     text-transform: uppercase;
    
 }
+.no-item{
+    display: block;
+}
+.no-item.active{
+    display: none;
+}
 
-.janela-carrinho span, .login-register span{
+.janela-carrinho .fechar, .login-register span{
     position: absolute;
     right: 30px;
     top: 20px;
     font-size: 25px;
     cursor: pointer;
 }
+.carrinho-container{
 
+    width: 96%;
+    height: 230px;
+    position: absolute;
+    bottom: 0;
+    
+}
+.carrinho-container button{
+    bottom: 10px;
+    right: 10px;
+    position: absolute;
+    background-color: #FFD814;
+    padding:10px;
+    font-size: 15px;
+    color: #10100F;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    text-transform: uppercase;
+    border: 2px solid #FFD814;
+    transition: 0.2s;
+    visibility: hidden;
+    
+}
+.carrinho-container button.active{
+    visibility: visible;
+}
+.carrinho-container button:hover{
+    background-color: transparent;
+}
+.itens-carrinho{
+    
+    width: 100%;
+    overflow: hidden;
+    gap: 5px;
+    height: 175px;
+    overflow-y: scroll;
+  
+    visibility: hidden;
+}
+.itens-carrinho.active{
+    visibility: visible;
+}
+.item-carrinho{
+  
+    margin-bottom: 15px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    border-radius: 5px;
+ 
+    height: 80px;
+    width: 100%;
+    flex-direction: column;
+ 
+    overflow: hidden;
+}
+.item-carrinho input{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    cursor: pointer;
+}
+.item-carrinho span{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+
+}
+.item-carrinho h2,.item-carrinho p{
+    margin-left: 70px;
+}
+.titulo{
+    font-size: 15px;
+    max-width: 380px;
+}
+.item-carrinho img{
+    height: 80px;
+    max-width: 60px;
+    position:absolute;
+    left: 0;
+}
 
 /*slider*/
 .apresentacao-inicio{ 
