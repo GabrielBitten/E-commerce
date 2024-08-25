@@ -3,63 +3,89 @@ function navigateTo(href) {
   window.location.hash = href;
 }
 
+document.addEventListener('DOMContentLoaded', function(){
+  selectCategory('')
+})
+
 //----------------------------------------------------------------------------------
-//consumo da api e criação de produtos no HTML
-document.addEventListener('DOMContentLoaded', function () {
+
+function displayProducts(products) {
   let productSection = document.querySelector('.products-section');
-
-
-  async function fetchProdutos(url) {
-    let data = await fetch(url);
-    let response = await data.json();
-
-    console.log(response);
-
-    response.forEach(product => {
-      const rating = product.rating.rate;
-
-      const productHtml = `
-        <div class="product">
-          <div class="imagem-container">
-            <img src="${product.image}" alt="Category Image">
-          </div>
-          <div class="info-product">
-            <h1 class="titulo">${product.title}</h1>
-            <div class="stars" data-rating="${rating}">
-              <span class="star" data-value="1"><i class="fa-solid fa-star"></i></span>
-              <span class="star" data-value="2"><i class="fa-solid fa-star"></i></span>
-              <span class="star" data-value="3"><i class="fa-solid fa-star"></i></span>
-              <span class="star" data-value="4"><i class="fa-solid fa-star"></i></span>
-              <span class="star" data-value="5"><i class="fa-solid fa-star"></i></span>
-              <span class="nota">${product.rating.rate}</span>
-            </div>
-            <p>${product.rating.count} Avaliações</p>
-            <p class="preco">R$${product.price}</p>
-            <button onclick="addCarrinho(${product.id})"><img src="img/icons8-carrinho-48 (3).png"></button>
-          </div>
+  productSection.innerHTML = ''; 
+  
+  products.forEach(product => {
+    const rating = product.rating.rate;
+    
+    const productHtml = `
+      <div class="product">
+        <div class="imagem-container">
+          <img src="${product.image}" alt="Category Image">
         </div>
-      `;
-
-      productSection.innerHTML += productHtml;
-
-      const stars = productSection.querySelector(`.product:last-child .stars`);
-      const starElements = stars.querySelectorAll('.star');
-
-      starElements.forEach(star => {
-        const value = parseInt(star.getAttribute('data-value'));
-
-        if (value <= rating) {
-          star.classList.remove('starGray');
-        } else {
-          star.classList.add('starGray');
-        }
-      });
+        <div class="info-product">
+          <h1 class="titulo">${product.title}</h1>
+          <div class="stars" data-rating="${rating}">
+            <span class="star" data-value="1"><i class="fa-solid fa-star"></i></span>
+            <span class="star" data-value="2"><i class="fa-solid fa-star"></i></span>
+            <span class="star" data-value="3"><i class="fa-solid fa-star"></i></span>
+            <span class="star" data-value="4"><i class="fa-solid fa-star"></i></span>
+            <span class="star" data-value="5"><i class="fa-solid fa-star"></i></span>
+            <span class="nota">${product.rating.rate}</span>
+          </div>
+          <p>${product.rating.count} Avaliações</p>
+          <p class="preco">R$${product.price}</p>
+          <button onclick="addCarrinho(${product.id})"><img src="img/icons8-carrinho-48 (3).png"></button>
+        </div>
+      </div>
+    `;
+    
+    productSection.innerHTML += productHtml;
+    
+    const stars = productSection.querySelector(`.product:last-child .stars`);
+    const starElements = stars.querySelectorAll('.star');
+    
+    starElements.forEach(star => {
+      const value = parseInt(star.getAttribute('data-value'));
+      if (value <= rating) {
+        star.classList.remove('starGray');
+      } else {
+        star.classList.add('starGray');
+      }
     });
+  });
+}
+function selectCategory(category) {
+  fetchProductsByCategory(category || '');
+}
+
+
+async function fetchProductsByCategory(category) {
+  let url;
+  if (category) {
+
+    let encodedCategory = encodeURIComponent(category);
+    url = `https://fakestoreapi.com/products/category/${encodedCategory}`;
+  } else {
+
+    url = 'https://fakestoreapi.com/products';
   }
 
-  fetchProdutos('https://fakestoreapi.com/products');
-});
+  try {
+    let response = await fetch(url);
+    let products = await response.json();
+    displayProducts(products);
+  } catch (error) {
+    console.error('Erro ao buscar produtos:', error);
+  }
+}
 
+
+
+//---------------------------------------------------------------------------------
+function getInfoProduct(){
+  event.preventDefault()
+
+  const produto = document.querySelector('')
+}
 
 
 
@@ -139,40 +165,63 @@ function teste(){
 }
 
 
+function atualizarCarrinho() {
+  let itens_section = document.querySelector('.itens-carrinho');
+  itens_section.innerHTML = '';
+
+  itens.forEach(produto => {
+    const itensHTML = `
+      <div class="item-carrinho">
+        <img src="${produto.image}" alt="">
+        <input type="checkbox">
+        <h2 class="titulo">${produto.title}</h2>
+        <p class="price">Preço: ${produto.price}</p>
+        <p class="quantidade">Quantidade: ${produto.quantidade}</p>
+        <span onclick="removerProduto(${produto.id})"><i class="fa-solid fa-x"></i></span>
+      </div>
+    `;
+    itens_section.innerHTML += itensHTML;
+  });
+}
+function removerProduto(produtoId) {
+
+  itens = itens.filter(produto => 
+    produto.id !== produtoId);
+
+
+  atualizarCarrinho();
+}
+
 function addCarrinho(produtoId) {
   event.preventDefault();
 
-  let itens_section = document.querySelector('.itens-carrinho')
   async function fetchProduto(url) {
+    let data = await fetch(url);
+    let produto = await data.json();
 
 
-      let data = await fetch(url);
-    
-      let produto = await data.json();
-      itens.push(produto);  
-      itensCheck.push(produto)
-      teste()
-      console.log(itensCheck)
-      console.log(itens);
+    let produtoExistente = itens.find(item => item.id === produtoId);
 
-      itens.forEach(produto =>{
-        const itensHTML = `
-            <div class="item-carrinho">
+    if (produtoExistente) {
+ 
+      produtoExistente.quantidade++;
+    } else {
+  
+      produto.quantidade = 1; 
+      itens.push(produto);
+    }
 
-           <img src="${produto.image}" alt="">
-           <input type="checkbox">
-            <h2 class="titulo">${produto.title}</h2>
-             <p class="price">Preço: ${produto.price}</p>
-              <p class="quantidade">Quantidade: 10</p>
-                <span><i class="fa-solid fa-x"></i></span>
-          
-         </div>
-        `
-        itens = []
-        itens_section.innerHTML += itensHTML;
-      })
-   
+ 
+    itens = itens.filter((item, index, self) =>
+      index === self.findIndex((t) => (
+        t.id === item.id
+      ))
+    );
+
+    teste();
+    atualizarCarrinho();
   }
 
   fetchProduto(`https://fakestoreapi.com/products/${produtoId}`);
 }
+

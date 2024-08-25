@@ -132,6 +132,7 @@ button{
     flex-direction: column;
     visibility: hidden;
     animation: animate 0.5s;
+    z-index: 1000;
 
 }
 .active {
@@ -269,7 +270,7 @@ button{
 }
 .carrinho-container button{
     bottom: 10px;
-    right: 10px;
+    right: 20px;
     position: absolute;
     background-color: #FFD814;
     padding:10px;
@@ -504,7 +505,8 @@ background-color: #10100F;
 
 
 #categorias{
-    height: 110vh;
+    height: 120vh;
+    
     width: 100%;
     display: flex;
     justify-content: center;
@@ -595,9 +597,9 @@ background-color: #10100F;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-  
+     
     gap: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     
 
 }
@@ -615,13 +617,16 @@ background-color: #10100F;
 #category-types{
   
     
-    height: 160px;
+    height:215px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
     flex-wrap: wrap;
     width: 50vw;
+    position: relative;
+   
 }
+
 #category-types span{
    
     height: 150px;
@@ -636,7 +641,13 @@ background-color: #10100F;
     gap: 10px;
 
 }
-
+.todos{
+    position: absolute;
+    margin: 0 auto;
+    bottom: 0;
+    width: 50vw!important;
+    height: 50px !important ;
+   }
 #category-types span:hover{
     box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.15);
 
@@ -646,7 +657,9 @@ background-color: #10100F;
 
 
 #products{
-    height: 400vh;
+    height:auto;
+    max-height: 420vh;
+    
     width: 100%;
     background-color: white;
     display: flex;
@@ -656,7 +669,7 @@ background-color: #10100F;
 }
 #products .title {
     font-size: 50px;
-    margin-top: 100px;
+     margin: 50px;
  
     text-align: center;
     height: 75px;
@@ -664,10 +677,11 @@ background-color: #10100F;
 .products-section{
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    grid-template-rows: repeat(6,1fr);
-    width: 81vw;
-    height: 400vh;
-    border: 2px solid black;
+
+    width: 96vw;
+    height: auto;
+    
+   
     gap: 20px;
    
 
@@ -686,6 +700,7 @@ background-color: #10100F;
   
     
 }
+
 .imagem-container{
     background-color: white;
     width: 100%;
@@ -774,4 +789,139 @@ aside{
     width: 200px;
     height: 500vh;
     background-color: gray;
+}
+
+
+
+
+
+
+
+
+#beneficios-section{
+    height: 80vh;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+   
+}
+#beneficios-section .div1{
+    background-color: white;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:400px;
+  
+}
+#beneficios-section .div2{
+    background-color: #414B4A;
+    width: 40%;
+    height:400px;
+
+}
+#beneficios-section h1{
+    font-size: 45px;
+}
+#beneficios-section p{
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    opacity: 0.8;
+  
+}
+
+.beneficios{
+  
+    width: 50vw;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: repeat(2, 1fr);
+    margin-right: 30px;
+    gap: 20px;
+    
+}
+.beneficios .title{
+    font-size: 20px !important ;
+}
+.beneficios .descricao{
+    font-size: 15px !important;
+    font-weight: 500;
+    text-align: justify !important;
+    opacity: 0.8;
+}
+.beneficios img{
+    height: 60px;
+}
+.beneficio{
+    height: 90px;
+    width: auto;
+    gap: 10px;
+    display: flex;
+}
+
+#beneficios-section .div2{
+
+    background-color: #414B4A;
+    position: relative;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    gap: 50px;
+   
+}
+#beneficios-section .div2 h2{
+    margin-left: 30px;
+    width: 400px;
+    z-index: 2;
+}
+#beneficios-section .div2 p{
+    width: 300px;
+    text-align: justify;
+    margin-left: 30px;
+    opacity: 1;
+    z-index: 1;
+}
+#beneficios-section .div2 img{
+    position: absolute;
+    height: 25rem;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+   
+
+    
+}
+
+
+
+
+
+
+#beneficios-section button{
+    margin-left: 30px;
+    max-width: 21rem;
+}
+
+#beneficios-section button{
+    padding: 20px;
+    background-color: white;
+    color: #10100F;
+    border: none;
+    font-size: 15px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.2s;
+    opacity: 0.8;
+    font-weight: 500;
+   
+  
+}
+#beneficios-section button:hover{
+    opacity: 1;
+    color: #10100F;
 }
