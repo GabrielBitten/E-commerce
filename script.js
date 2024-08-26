@@ -7,10 +7,21 @@ document.addEventListener('DOMContentLoaded', function(){
   selectCategory('')
 })
 
+
+
+
 //----------------------------------------------------------------------------------
 
 function displayProducts(products) {
   let productSection = document.querySelector('.products-section');
+  let searchBar = document.querySelector('#barra-pesquisa')
+
+
+
+
+
+
+
   productSection.innerHTML = ''; 
   
   products.forEach(product => {
@@ -126,6 +137,36 @@ function abrirPerfil(){
     
     sombra.style.display = 'none';
   }
+}
+
+function cadastrese(){
+  event.preventDefault()
+  let login_register = document.querySelector('.login-register')
+  let login = document.querySelector('.login')
+  login_register.classList.toggle('active')
+  login.classList.toggle('active')
+  
+}
+
+function login(){
+  event.preventDefault()
+  let login_register = document.querySelector('.login-register')
+  let login = document.querySelector('.login')
+  let sombra = document.querySelector('.sombra');
+
+  login_register.classList.add('active')
+  login_register.classList.toggle('active')
+
+  login.classList.toggle('active')
+
+  
+  if (login.classList.contains('active')) {
+    sombra.style.display = 'block'; 
+  } else {
+    
+    sombra.style.display = 'none';
+  }
+
 }
 
 

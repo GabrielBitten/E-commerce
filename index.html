@@ -77,10 +77,26 @@
 
           <button>Registrar-se</button>
         </form>
-        <p>Já possui uma conta?login</p>
+        <p>Já possui uma conta?<a onclick="login()" href="">login</a></p>
       </div>
      </div> 
 
+
+     <div class="login">
+      <h1>Login</h1>
+      <span onclick="login()"><i class="fa-solid fa-x"></i></span>
+      <form class="form-container" action="">
+
+        <label for="email">E-mail</label>
+        <input type="email" name="email" id="email" placeholder="Informe seu e-mail">
+
+        <label for="password">Senha</label>
+        <input type="password" name="password" id="senha" placeholder="informe sua senha">
+
+        <button>Acessar</button>
+      </form>
+      <p>Ainda não possui uma conta?<a onclick="cadastrese()" href="">Cadastre-se</a></p>
+    </div>
 
         <div class="apresentacao-inicio">
           <div class="slides">

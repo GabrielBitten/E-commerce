@@ -139,7 +139,7 @@ button{
   
     visibility: visible;
 }
-.login-register h1{
+.login-register h1, .login h1{
     top: 0;
     position: absolute;
     
@@ -156,17 +156,27 @@ button{
     justify-content: space-between;
     align-items: flex-start;
     flex-direction: column;
-    
+   
     padding: 10px;
 }
-.login-register form input{
+ .login form{
+    margin-top:50px;
+    height: 250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+   
+    padding: 10px;
+}
+.login-register form input, .login form input{
     padding: 12px;
     width: 400px;
     margin-bottom: 10px;
     font-size: 15px;
 
 }
-.login-register form button{
+.login-register form button, .login form button{
     padding: 12px;
     text-transform: uppercase;
     width: 100%;
@@ -177,14 +187,33 @@ button{
     margin-top: 15px;
     
 }
-.login-register p{
+.login-register p, .login p{
     opacity: 0.8;
 }
 
 .janela-carrinho.active{
     visibility: visible;
 }
+.login{
+    position: absolute;
+    top:-20px;
+   
+    height: 500px;
+    width: 600px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    visibility: hidden;
+    animation: animate 0.5s;
+    z-index: 1000;
 
+}
+
+.login.active{
+    visibility: visible;
+}
 
 .janela-carrinho{
     position: absolute;
@@ -253,7 +282,7 @@ button{
     display: none;
 }
 
-.janela-carrinho .fechar, .login-register span{
+.janela-carrinho .fechar, .login-register span, .login span{
     position: absolute;
     right: 30px;
     top: 20px;
