@@ -266,3 +266,32 @@ function addCarrinho(produtoId) {
   fetchProduto(`https://fakestoreapi.com/products/${produtoId}`);
 }
 
+//--------------------------------------------------------------------------------------
+//local storage
+
+function cadastrarUsuario(){
+  let nome = document.getElementById('nome').value
+  let email = document.getElementById('email').value
+  let senha = document.getElementById('senha').value
+
+  localStorage.setItem('nomeUsuario',nome)
+  localStorage.setItem('emailUsuario',email)
+  localStorage.setItem('senhaUsuario',senha)
+}
+
+function logarUsuario(){
+
+ 
+  
+  let email = document.getElementById('emailLogin').value;
+  let senha = document.getElementById('senhaLogin').value;
+
+  let emailSalvo = localStorage.getItem('emailUsuario');
+  let senhaSalva = localStorage.getItem('senhaUsuario');
+
+  if(email === emailSalvo && senha === senhaSalva){
+    alert("Login bem-sucedido");
+  } else {
+    alert("Email ou senha incorretos");
+  }
+}

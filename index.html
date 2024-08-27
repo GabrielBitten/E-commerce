@@ -67,15 +67,15 @@
         <span onclick="abrirPerfil()"><i class="fa-solid fa-x"></i></span>
         <form class="form-container" action="">
           <label for="name">Nome</label>
-          <input type="text" placeholder="Informe seu nome">
+          <input type="text" id="nome" placeholder="Informe seu nome" required>
 
           <label for="email">E-mail</label>
-          <input type="email" name="email" id="email" placeholder="Informe seu e-mail">
+          <input type="email" name="email" id="email" placeholder="Informe seu e-mail" required>
 
           <label for="password">Senha</label>
-          <input type="password" name="password" id="senha" placeholder="informe sua senha">
+          <input type="password" name="password" id="senha" placeholder="informe sua senha" required>
 
-          <button>Registrar-se</button>
+          <button onclick="cadastrarUsuario()">Registrar-se</button>
         </form>
         <p>Já possui uma conta?<a onclick="login()" href="">login</a></p>
       </div>
@@ -88,12 +88,12 @@
       <form class="form-container" action="">
 
         <label for="email">E-mail</label>
-        <input type="email" name="email" id="email" placeholder="Informe seu e-mail">
+        <input type="email" name="email" id="emailLogin" placeholder="Informe seu e-mail" required>
 
         <label for="password">Senha</label>
-        <input type="password" name="password" id="senha" placeholder="informe sua senha">
+        <input type="password" name="password" id="senhaLogin" placeholder="informe sua senha" required>
 
-        <button>Acessar</button>
+        <button onclick="logarUsuario()">Acessar</button>
       </form>
       <p>Ainda não possui uma conta?<a onclick="cadastrese()" href="">Cadastre-se</a></p>
     </div>
