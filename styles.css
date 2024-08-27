@@ -55,6 +55,20 @@ hr{
     justify-content: center;
     gap: 25px;
 }
+#cadastrar-produto{
+    border: 1px solid #10100F;
+    padding: 12px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 15px;
+    visibility: hidden;
+    
+
+}
+
+#cadastrar-produto.active{
+    visibility: visible;
+}
 #header a{
     color: #10100F;
 }
@@ -139,7 +153,7 @@ button{
   
     visibility: visible;
 }
-.login-register h1, .login h1{
+.login-register h1, .login h1 , .cadastro-produto-form h1{
     top: 0;
     position: absolute;
     
@@ -169,14 +183,14 @@ button{
    
     padding: 10px;
 }
-.login-register form input, .login form input{
+.login-register form input, .login form input, .cadastro-produto-form input{
     padding: 12px;
     width: 400px;
     margin-bottom: 10px;
     font-size: 15px;
 
 }
-.login-register form button, .login form button{
+.login-register form button, .login form button , .cadastro-produto-form button{
     padding: 12px;
     text-transform: uppercase;
     width: 100%;
@@ -187,7 +201,7 @@ button{
     margin-top: 15px;
     
 }
-.login-register p, .login p{
+.login-register p, .login p {
     opacity: 0.8;
 }
 
@@ -247,6 +261,99 @@ button{
     }
 
 }
+.cadastro-produto-form{
+    top: 18%;
+    position: fixed;
+    height: 450px;
+    width: 500px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  
+    animation: animate 0.5s;
+    z-index: 1000;
+
+}
+
+
+.cadastro-produto-form ul{
+    list-style: none;
+    text-align: center;
+}
+
+
+.cadastro-produto-form ul li a{
+    background-color: #F5F5F5;
+    display: block;
+    padding: 5px;
+    width: 170px;
+    border: 1px solid #F5F5F5;
+    text-decoration: none;
+    text-align: start;
+    color: #10100F;
+}
+ul.dropdown li{
+    display: block;
+}
+ul.dropdown{
+ width:auto;
+ display: none;
+}
+.cadastro-produto-form ul li a:hover{
+ background-color: white;
+}
+#category:hover ul.dropdown{
+    display: block;
+    cursor: pointer;
+}
+#category{
+ position: absolute;
+ top: 58%;
+ background-color: #F5F5F5;
+ padding: 6px;
+ width: 176px;
+}
+.category{
+    display: flex;
+    justify-content: space-between;
+}
+
+.images{
+    padding: 5px;
+     align-self: flex-end;
+     background-color: #F5F5F5;
+     cursor: pointer;
+}
+#imagem{
+   visibility: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.cadastro-produto-form form{
+    
+    margin-top:50px;
+    height: 350px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+   
+    padding: 10px;
+}
+
+
 .sombra{
     
     top: 0;
@@ -282,7 +389,7 @@ button{
     display: none;
 }
 
-.janela-carrinho .fechar, .login-register span, .login span{
+.janela-carrinho .fechar, .login-register span, .login span, .cadastro-produto-form span{
     position: absolute;
     right: 30px;
     top: 20px;

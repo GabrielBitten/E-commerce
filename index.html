@@ -15,6 +15,7 @@
     <header id="header">
         <div id="logo-div">
         <a id="logo" href="#inicio"><img src="img/icons8-carrinho-48 (2).png" > E-commerce <br> Station</a>
+        <a id="cadastrar-produto" href="">Cadastrar produto</a>
         
       
     </div>
@@ -96,6 +97,37 @@
         <button onclick="logarUsuario()">Acessar</button>
       </form>
       <p>Ainda não possui uma conta?<a onclick="cadastrese()" href="">Cadastre-se</a></p>
+    </div>
+
+
+    <div class="cadastro-produto-form">
+      <h1>Cadastrar produto</h1>
+      <span><i class="fa-solid fa-x"></i></span>
+      <form action="">
+
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" placeholder="Informe o nome do produto" required>
+      <label for="valor">Valor</label>
+      <input type="number" id="valor" placeholder="Informe o valor do produto" required>
+ 
+  
+   <div id="category">
+    <label  class="category" for="">Categoria <i class="fa-solid fa-caret-down"></i></label>
+    <ul class="dropdown">
+      <li><a href="">Roupas masculinas</a></li>
+      <li><a href="">Roupas femininas</a></li>
+      <li><a href="">Eletronicos</a></li>
+      <li><a href="">Joias</a></li>
+    </ul>
+  </div>
+    
+
+    
+  <label class="images" for="imagem">Inserir imagem</label>
+  <input type="file" id="imagem" accept="image/*" required>
+  
+     <button>Cadastrar</button>
+    </form>
     </div>
 
         <div class="apresentacao-inicio">

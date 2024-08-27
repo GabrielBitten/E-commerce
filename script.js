@@ -280,17 +280,33 @@ function cadastrarUsuario(){
 }
 
 function logarUsuario(){
-
- 
+   event.preventDefault()
+  
   
   let email = document.getElementById('emailLogin').value;
   let senha = document.getElementById('senhaLogin').value;
+  
+  let cadastrarProdutoButton = document.getElementById('cadastrar-produto')
 
   let emailSalvo = localStorage.getItem('emailUsuario');
   let senhaSalva = localStorage.getItem('senhaUsuario');
 
+  let login = document.querySelector('.login')
+  let sombra = document.querySelector('.sombra');
+
   if(email === emailSalvo && senha === senhaSalva){
     alert("Login bem-sucedido");
+    
+    login.classList.toggle('active')
+    cadastrarProdutoButton.classList.toggle('active')
+    
+    if (login.classList.contains('active')) {
+      sombra.style.display = 'block'; 
+    } else {
+      
+      sombra.style.display = 'none';
+    }
+    
   } else {
     alert("Email ou senha incorretos");
   }
