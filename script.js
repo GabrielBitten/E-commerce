@@ -311,3 +311,23 @@ function logarUsuario(){
     alert("Email ou senha incorretos");
   }
 }
+
+//--------------------------------------------------------------------------
+//cadastro de produtos
+
+function salvarCategoria(category){
+  event.preventDefault()
+
+  console.log(category)
+}
+
+let nomeProduto = document.getElementById('nomeProduto').value
+let valorProduto = document.getElementById('valor').value
+
+let productImg = document.getElementById('img-container')
+let imgInput = document.getElementById('imagem')
+
+imgInput.onchange = function(){
+  productImg.src = URL.createObjectURL(imgInput.files[0])
+  productImg.style.display = 'block'
+}

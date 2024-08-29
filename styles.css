@@ -283,12 +283,22 @@ button{
     text-align: center;
 }
 
+#img-container{
+    bottom: 20%;
+    display: none;
+    height: 60px;
+    width: auto;
+    max-width: 150px;
+    position: absolute;
+    background-size: cover;
+}
+
 
 .cadastro-produto-form ul li a{
     background-color: #F5F5F5;
     display: block;
     padding: 5px;
-    width: 170px;
+    width: 164px;
     border: 1px solid #F5F5F5;
     text-decoration: none;
     text-align: start;
@@ -298,7 +308,7 @@ ul.dropdown li{
     display: block;
 }
 ul.dropdown{
- width:auto;
+ width:170px;
  display: none;
 }
 .cadastro-produto-form ul li a:hover{

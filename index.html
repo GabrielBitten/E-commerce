@@ -106,7 +106,7 @@
       <form action="">
 
       <label for="nome">Nome</label>
-      <input type="text" id="nome" placeholder="Informe o nome do produto" required>
+      <input type="text" id="nomeProduto" placeholder="Informe o nome do produto" required>
       <label for="valor">Valor</label>
       <input type="number" id="valor" placeholder="Informe o valor do produto" required>
  
@@ -114,17 +114,19 @@
    <div id="category">
     <label  class="category" for="">Categoria <i class="fa-solid fa-caret-down"></i></label>
     <ul class="dropdown">
-      <li><a href="">Roupas masculinas</a></li>
-      <li><a href="">Roupas femininas</a></li>
-      <li><a href="">Eletronicos</a></li>
-      <li><a href="">Joias</a></li>
+      <li onclick="salvarCategoria('men\'s clothing')" ><a href="">Roupas masculinas</a></li>
+      <li onclick="salvarCategoria('women\'s clothing')"><a href="">Roupas femininas</a></li>
+      <li onclick="salvarCategoria('electronics')"><a href="">Eletronicos</a></li>
+      <li onclick="salvarCategoria('jewelery')"><a href="">Joias</a></li>
     </ul>
   </div>
-    
+
 
     
-  <label class="images" for="imagem">Inserir imagem</label>
-  <input type="file" id="imagem" accept="image/*" required>
+  <label  class="images" for="imagem">Inserir imagem</label>
+  <input  type="file" id="imagem" accept="image/*" required>
+
+  <img id="img-container" src="" alt="">
   
      <button>Cadastrar</button>
     </form>
