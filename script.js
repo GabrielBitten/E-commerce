@@ -69,30 +69,44 @@ function selectCategory(category) {
 }
 
 
-let productsArray = []; 
+let productsArray = [];
 
-async function fetchProductsByCategory(category) {
 
-  let url;
-  if (category) {
-    let encodedCategory = encodeURIComponent(category);
-    url = `https://fakestoreapi.com/products/category/${encodedCategory}`;
-  } else {
-    url = 'https://fakestoreapi.com/products';
-  }
-
+async function loadAllProducts() {
   try {
-    let response = await fetch(url);
+    let response = await fetch('https://fakestoreapi.com/products');
     productsArray = await response.json(); 
 
-
-    
     displayProducts(productsArray); 
-    console.log(productsArray)
+    console.log(productsArray);
   } catch (error) {
     console.error('Erro ao buscar produtos:', error);
   }
 }
+
+function fetchProductsByCategory(category) {
+  let filteredProducts;
+
+  if (category) {
+   
+    filteredProducts = productsArray.filter(product => product.category === category);
+  } else {
+   
+    filteredProducts = productsArray;
+  }
+
+  displayProducts(filteredProducts); 
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  loadAllProducts();
+});
+
+
+function selectCategory(category) {
+  fetchProductsByCategory(category || '');
+}
+
 
 
 //---------------------------------------------------------------------------------
@@ -237,37 +251,37 @@ function removerProduto(produtoId) {
   atualizarCarrinho();
 }
 
+
+
 function addCarrinho(produtoId) {
   event.preventDefault();
 
-  async function fetchProduto(url) {
-    let data = await fetch(url);
-    let produto = await data.json();
 
+  let produto = productsArray.find(item => item.id === produtoId);
 
-    let produtoExistente = itens.find(item => item.id === produtoId);
-
-    if (produtoExistente) {
- 
-      produtoExistente.quantidade++;
-    } else {
-  
-      produto.quantidade = 1; 
-      itens.push(produto);
-    }
-
- 
-    itens = itens.filter((item, index, self) =>
-      index === self.findIndex((t) => (
-        t.id === item.id
-      ))
-    );
-
-    teste();
-    atualizarCarrinho();
+  if (!produto) {
+    console.error('Produto não encontrado na array.');
+    return;
   }
 
-  fetchProduto(`https://fakestoreapi.com/products/${produtoId}`);
+  let produtoExistente = itens.find(item => item.id === produtoId);
+
+  if (produtoExistente) {
+    produtoExistente.quantidade++;
+  } else {
+    produto.quantidade = 1;
+    itens.push(produto);
+  }
+
+
+  itens = itens.filter((item, index, self) =>
+    index === self.findIndex((t) => (
+      t.id === item.id
+    ))
+  );
+
+  teste();
+  atualizarCarrinho();
 }
 
 //--------------------------------------------------------------------------------------
