@@ -314,15 +314,47 @@ function logarUsuario(){
 
 //--------------------------------------------------------------------------
 //cadastro de produtos
+function abrirCadastroProduto(){
+  event.preventDefault()
+  let cadastroContainer = document.querySelector('.cadastro-produto-form')
+
+  cadastroContainer.classList.toggle('active')
+}
+
+
 
 function salvarCategoria(category){
   event.preventDefault()
-
+  categoriaSelecionada = category
   console.log(category)
 }
-
+function cadastrarProduto(){
+event.preventDefault()
 let nomeProduto = document.getElementById('nomeProduto').value
 let valorProduto = document.getElementById('valor').value
+let imagemProduto = document.getElementById('imagem').files[0]
+let cadastroContainer = document.querySelector('.cadastro-produto-form')
+
+
+
+const produto ={
+  nome : nomeProduto,
+  valor : valorProduto,
+  categoria : categoriaSelecionada,
+  imagem : imagemProduto ? URL.createObjectURL(imagemProduto) : ''
+}
+
+const imgContainer = document.getElementById('img-container');
+imgContainer.src = produto.imagem;
+
+
+console.log('Produto cadastrado:', produto);
+
+
+
+cadastroContainer.classList.toggle('active')
+}
+
 
 let productImg = document.getElementById('img-container')
 let imgInput = document.getElementById('imagem')

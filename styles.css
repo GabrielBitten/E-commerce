@@ -61,7 +61,9 @@ hr{
     border-radius: 50px;
     cursor: pointer;
     font-size: 15px;
-    visibility: hidden;
+
+
+    visibility: visible;
     
 
 }
@@ -271,10 +273,13 @@ button{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-  
+    visibility: hidden;
     animation: animate 0.5s;
     z-index: 1000;
 
+}
+.cadastro-produto-form.active{
+    visibility: visible;
 }
 
 
