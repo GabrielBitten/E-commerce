@@ -69,26 +69,30 @@ function selectCategory(category) {
 }
 
 
+let productsArray = []; 
+
 async function fetchProductsByCategory(category) {
+
   let url;
   if (category) {
-
     let encodedCategory = encodeURIComponent(category);
     url = `https://fakestoreapi.com/products/category/${encodedCategory}`;
   } else {
-
     url = 'https://fakestoreapi.com/products';
   }
 
   try {
     let response = await fetch(url);
-    let products = await response.json();
-    displayProducts(products);
+    productsArray = await response.json(); 
+
+
+    
+    displayProducts(productsArray); 
+    console.log(productsArray)
   } catch (error) {
     console.error('Erro ao buscar produtos:', error);
   }
 }
-
 
 
 //---------------------------------------------------------------------------------
@@ -314,6 +318,9 @@ function logarUsuario(){
 
 //--------------------------------------------------------------------------
 //cadastro de produtos
+
+
+
 function abrirCadastroProduto(){
   event.preventDefault()
   let cadastroContainer = document.querySelector('.cadastro-produto-form')
@@ -326,29 +333,42 @@ function abrirCadastroProduto(){
 function salvarCategoria(category){
   event.preventDefault()
   categoriaSelecionada = category
-  console.log(category)
+
 }
-function cadastrarProduto(){
+function cadastrarProduto(event){
 event.preventDefault()
 let nomeProduto = document.getElementById('nomeProduto').value
 let valorProduto = document.getElementById('valor').value
 let imagemProduto = document.getElementById('imagem').files[0]
+
+localStorage.setItem('nomeProduto', nomeProduto)
+localStorage.setItem('valorProduto', valorProduto)
+localStorage.setItem('imagemProduto', imagemProduto)
+
+
 let cadastroContainer = document.querySelector('.cadastro-produto-form')
 
 
 
 const produto ={
-  nome : nomeProduto,
-  valor : valorProduto,
-  categoria : categoriaSelecionada,
-  imagem : imagemProduto ? URL.createObjectURL(imagemProduto) : ''
+  id : Date.now(),
+  title : nomeProduto,
+  price : valorProduto,
+  description : 'Sem descrição',
+  category : categoriaSelecionada,
+  image : imagemProduto ? URL.createObjectURL(imagemProduto) : '',
+  rating: {
+    "rate": 0,
+    "count": 0
+  }
 }
-
+productsArray.push(produto)
 const imgContainer = document.getElementById('img-container');
-imgContainer.src = produto.imagem;
+imgContainer.src = produto.image;
 
 
 console.log('Produto cadastrado:', produto);
+
 
 
 
