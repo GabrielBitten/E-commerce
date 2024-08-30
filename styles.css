@@ -63,7 +63,7 @@ hr{
     font-size: 15px;
 
 
-    visibility: visible;
+    visibility: hidden;
     
 
 }
@@ -296,6 +296,9 @@ button{
     max-width: 150px;
     position: absolute;
     background-size: cover;
+    border: 1px solid black;
+    z-index: 1;
+ 
 }
 
 
@@ -311,10 +314,12 @@ button{
 }
 ul.dropdown li{
     display: block;
+ 
 }
 ul.dropdown{
  width:170px;
  display: none;
+
 }
 .cadastro-produto-form ul li a:hover{
  background-color: white;
@@ -322,6 +327,7 @@ ul.dropdown{
 #category:hover ul.dropdown{
     display: block;
     cursor: pointer;
+   
 }
 #category{
  position: absolute;
@@ -329,10 +335,12 @@ ul.dropdown{
  background-color: #F5F5F5;
  padding: 6px;
  width: 176px;
+ z-index: 12;
 }
 .category{
     display: flex;
     justify-content: space-between;
+    
 }
 
 .images{
@@ -343,6 +351,7 @@ ul.dropdown{
 }
 #imagem{
    visibility: hidden;
+   
 }
 
 
@@ -812,7 +821,7 @@ background-color: #10100F;
 
 #products{
     height:auto;
-    max-height: 420vh;
+    
     
     width: 100%;
     background-color: white;
@@ -830,7 +839,7 @@ background-color: #10100F;
   }
 .products-section{
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(5,1fr);
 
     width: 96vw;
     height: auto;
@@ -1109,7 +1118,7 @@ aside{
 .colums button{
     width: 40px;
     background-color: #10100F;
-  
+     border: none;
     transition: 0.2s;
     cursor: pointer;
 }

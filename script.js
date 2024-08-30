@@ -324,8 +324,18 @@ function logarUsuario(){
 function abrirCadastroProduto(){
   event.preventDefault()
   let cadastroContainer = document.querySelector('.cadastro-produto-form')
+  let sombra = document.querySelector('.sombra');
 
   cadastroContainer.classList.toggle('active')
+
+
+  if (cadastroContainer.classList.contains('active')) {
+    sombra.style.display = 'block'; 
+  } else {
+    
+    sombra.style.display = 'none';
+  }
+ 
 }
 
 
@@ -335,22 +345,26 @@ function salvarCategoria(category){
   categoriaSelecionada = category
 
 }
-function cadastrarProduto(event){
+function cadastrarProduto(){
 event.preventDefault()
 let nomeProduto = document.getElementById('nomeProduto').value
 let valorProduto = document.getElementById('valor').value
 let imagemProduto = document.getElementById('imagem').files[0]
+let imgContainer = document.getElementById('img-container');
+let sombra = document.querySelector('.sombra');
+let cadastroContainer = document.querySelector('.cadastro-produto-form')
+
 
 localStorage.setItem('nomeProduto', nomeProduto)
 localStorage.setItem('valorProduto', valorProduto)
 localStorage.setItem('imagemProduto', imagemProduto)
 
 
-let cadastroContainer = document.querySelector('.cadastro-produto-form')
 
 
 
-const produto ={
+
+let produto ={
   id : Date.now(),
   title : nomeProduto,
   price : valorProduto,
@@ -362,18 +376,26 @@ const produto ={
     "count": 0
   }
 }
+
 productsArray.push(produto)
-const imgContainer = document.getElementById('img-container');
+
+displayProducts(productsArray)
+
+
 imgContainer.src = produto.image;
 
-
-console.log('Produto cadastrado:', produto);
-
-
-
-
 cadastroContainer.classList.toggle('active')
+
+
+if (cadastroContainer.classList.contains('active')) {
+  sombra.style.display = 'block'; 
+} else {
+  
+  sombra.style.display = 'none';
 }
+}
+
+
 
 
 let productImg = document.getElementById('img-container')
