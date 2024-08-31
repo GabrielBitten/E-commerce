@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 function displayProducts(products) {
   let productSection = document.querySelector('.products-section');
-  let searchBar = document.querySelector('#barra-pesquisa')
+
 
 
 
@@ -44,7 +44,7 @@ function displayProducts(products) {
           </div>
           <p>${product.rating.count} Avaliações</p>
           <p class="preco">R$${product.price}</p>
-          <button onclick="addCarrinho(${product.id})"><img src="img/icons8-carrinho-48 (3).png"></button>
+          <button onclick="addCarrinho(${product.id})">Carrinho</button>
         </div>
       </div>
     `;
@@ -434,3 +434,19 @@ imgInput.onchange = function(){
   productImg.src = URL.createObjectURL(imgInput.files[0])
   productImg.style.display = 'block'
 }
+
+function search() {
+  let searchBar = document.querySelector('#barra-pesquisa').value.toLowerCase();
+
+
+  let filteredProducts = productsArray.filter(product => 
+    product.title.toLowerCase().includes(searchBar) || product.description.toLowerCase().includes(searchBar)
+  );
+
+ 
+  displayProducts(filteredProducts);
+}
+
+document.getElementById('search-button').addEventListener('submit', function(){
+  event.preventDefault()
+})
