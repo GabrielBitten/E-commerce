@@ -1125,7 +1125,12 @@ aside{
 .colums button img{
     height: 30px;
 }
-
+.totalCarrinho{
+    position: absolute;
+    bottom:15px;
+    font-size: 20px
+    
+}
 .colums .logo{
     display: flex;
     font-size: 20px;

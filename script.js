@@ -227,20 +227,35 @@ function teste(){
 function atualizarCarrinho() {
   let itens_section = document.querySelector('.itens-carrinho');
   itens_section.innerHTML = '';
-
+  
+  
+  let total = 0
   itens.forEach(produto => {
+    
+    let valorTotal = produto.price * produto.quantidade
+    total += valorTotal
+
     const itensHTML = `
       <div class="item-carrinho">
         <img src="${produto.image}" alt="">
-        <input type="checkbox">
+       
         <h2 class="titulo">${produto.title}</h2>
         <p class="price">Preço: ${produto.price}</p>
         <p class="quantidade">Quantidade: ${produto.quantidade}</p>
         <span onclick="removerProduto(${produto.id})"><i class="fa-solid fa-x"></i></span>
       </div>
+      
     `;
     itens_section.innerHTML += itensHTML;
   });
+
+
+  const totalHTML =`
+    <div class="carrinho-container">
+      <h2 class="totalCarrinho">Total:R$ ${total.toFixed(2)}</h2>
+    </div>
+  `
+  itens_section.innerHTML += totalHTML;
 }
 function removerProduto(produtoId) {
 
