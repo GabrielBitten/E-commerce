@@ -509,12 +509,13 @@ ul.dropdown{
 /*slider*/
 .apresentacao-inicio{ 
     height: 30rem;
-    width: 1100px;
+    width: 85%;
     margin: 0 auto;
     position: relative; 
     margin-inline: auto;
     overflow: hidden;
-    
+ 
+   
     
     
  
@@ -701,6 +702,7 @@ background-color: #10100F;
     align-items: start;
     flex-direction: column;
     gap: 30px;
+    
 }
 .box1 p,.box1 h2,.box1 button{
     margin-left: 30px;
@@ -718,7 +720,7 @@ background-color: #10100F;
     transition: 0.2s;
     opacity: 0.8;
     font-weight: 500;
-   
+    
   
 }
 .box1 button:hover{
@@ -738,6 +740,7 @@ background-color: #10100F;
     position: absolute;
     bottom: 15px; 
     right: 15px;
+    z-index: 1;
  
     
 }
@@ -787,6 +790,7 @@ background-color: #10100F;
     flex-wrap: wrap;
     width: 50vw;
     position: relative;
+
    
 }
 
@@ -839,13 +843,13 @@ background-color: #10100F;
   }
 .products-section{
     display: grid;
-    grid-template-columns: repeat(5,1fr);
-
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+   
     width: 96vw;
     height: auto;
     
    
-    gap: 20px;
+    gap: 10px;
    
 
 }
@@ -1182,4 +1186,52 @@ aside{
     align-items: center;
     gap: 500px;
 
+}
+
+/*=====================================================================================================
+Responsividade*/
+/*1250px categorias*/
+
+
+@media screen and (max-width: 1250px){
+    #category-types span{
+        height: 130px;
+        width: 130px;
+        font-size: 14px;
+        gap: 0;
+    }
+    .todos{
+        position:static;
+        margin: 0;
+        width: 130px !important;
+        height: 130px !important;
+       }
+       #category-types{
+       width: auto;  
+       margin: 0 50px; 
+       height: auto;
+       gap: 10px;
+    }
+    .box1 img{
+        height: 9rem;
+   
+    
+    }
+}
+
+@media screen and (max-width: 1150px){
+    .apresentacao-inicio h2{
+        font-size: 50px;
+    }
+    .apresentacao-inicio p{
+        font-size: 15px;
+    }
+    .div2 img{
+        height: 25rem;
+     
+    }
+    .div1{
+        gap: 10px;
+    }
+   
 }
