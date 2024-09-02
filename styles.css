@@ -551,7 +551,7 @@ ul.dropdown{
 }
 .manual-navigation{
     position: absolute;
-    width: 1100px;
+    width: 100%;
     
     display: flex;
     justify-content: center;
@@ -570,6 +570,14 @@ ul.dropdown{
     transition: 0.5s;
    
    
+}
+.navigation-auto{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 .manual-btn:hover{
     background-color: #10100F;
@@ -592,14 +600,7 @@ ul.dropdown{
     height: 20px;
     width: 20px;
 }
-.navigation-auto{
-    position: absolute;
-    width: 1100px;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
+
 
 #item1:checked ~ .navigation-auto .auto-btn1{
 background-color: #10100F;
@@ -670,7 +671,7 @@ background-color: #10100F;
 
 #categorias{
     height: 120vh;
-    
+   
     width: 100%;
     display: flex;
     justify-content: center;
@@ -969,7 +970,7 @@ aside{
 
 
 #beneficios-section{
-    height: 80vh;
+    height: 100vh;
     background-color: white;
     display: flex;
     justify-content: center;
@@ -1184,8 +1185,12 @@ aside{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    gap: 500px;
+   
 
+}
+.direitos p{
+
+   width: 100%;
 }
 
 /*=====================================================================================================
@@ -1233,5 +1238,43 @@ Responsividade*/
     .div1{
         gap: 10px;
     }
+
+    #beneficios-section{
+        flex-direction: column;
+    }
+    #beneficios-section .div1,#beneficios-section .div2{
+        width: 100%;
+    }
    
+   .beneficios{
+  
+    width:90vw;
+    margin-right: 0px;
+   }
+}
+
+@media screen and (max-width: 950px){
+    #propagandas{
+       
+        
+        height: 44rem;
+    
+        flex-direction: column-reverse;
+     
+    
+    }
+    .box{
+        width:100%;
+    }
+    .box1 img{
+        height: 12rem;
+   
+    
+    }
+    #chose-category{
+        margin-top: 400px;
+    }
+#categorias{
+    height: 160vh;
+}
 }
