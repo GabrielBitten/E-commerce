@@ -41,9 +41,10 @@ hr{
 #logo{
    
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    width: 10rem;
+    width: 15rem;
+   
     font-size: 18px;
     font-weight: 900;
 }
@@ -78,6 +79,7 @@ hr{
   
     display: flex;
     justify-content: center;
+    margin-bottom:50px ;
     
  
 }
@@ -615,7 +617,7 @@ background-color: #10100F;
 .div1,.div2{
     height: 30rem;
     width: 49%;
-    background-color: #FCF5EE;
+   
    
   
 }
@@ -995,6 +997,7 @@ aside{
 }
 #beneficios-section h1{
     font-size: 45px;
+    text-align: center;
 }
 #beneficios-section p{
     text-align: center;
@@ -1016,6 +1019,7 @@ aside{
 }
 .beneficios .title{
     font-size: 20px !important ;
+    text-align: start !important;
 }
 .beneficios .descricao{
     font-size: 15px !important;
@@ -1104,17 +1108,19 @@ aside{
     height: 90vh;
     background-color: #F5F5F5;
     display: flex;
-    justify-content: center;
+
     align-items: center;
     justify-content: space-around;
     position: relative;
 }
 
 .colums{
-  
-    height: 55%;
+    width: 220px;
+    height: 30%;
     display: flex;
+
     
+
     align-items: flex-start;
     flex-direction: column;
     gap: 12px;
@@ -1258,7 +1264,7 @@ Responsividade*/
        
         
         height: 44rem;
-    
+       
         flex-direction: column-reverse;
      
     
@@ -1274,7 +1280,119 @@ Responsividade*/
     #chose-category{
         margin-top: 400px;
     }
-#categorias{
+    #categorias{
     height: 160vh;
+    }
+    .div2 img{
+        height: 18rem;
+        margin: 0;
+        
+     
+    }
+    .div2{
+        background-size: cover;
+        display: flex;
+        align-items: center;
+    }
+  
 }
+
+@media screen and (max-width: 750px){
+    #footer{
+ 
+        flex-wrap: wrap;
+   
+    }
+    
+    
+    .colums{
+    
+        height: 30%;
+        width: 220px;
+        margin-bottom: 50px;
+        max-height: 270px;
+      
+}
+#beneficios-section{
+    height: 190vh;
+}
+
+
+.beneficios{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 30px; 
+    
+    gap: 50px;
+}
+.apresentacao-conteiner  p{
+    display: none;
+
+}
+.apresentacao-conteiner h2{
+    font-size:37px;
+}
+.apresentacao-conteiner .div1{
+    position: relative;
+    width: 100%;
+    gap:300px;
+    
+}
+
+
+.apresentacao-conteiner .div2{
+    position: absolute;
+    width: 100%;
+}
+.div2 img{
+    height: 16rem;
+    
+    margin: 0 auto;
+}
+.apresentacao-conteiner button{
+    transform: scale(0.8);
+   
+}
+
+}
+.manual-btn{
+   display: none;
+   
+   
+}
+.navigation-auto{
+  display: none;
+}
+
+
+
+
+@media screen and (max-width: 600px){
+    #beneficios-section h1{
+     
+     font-size: 35px;
+    }
+    #beneficios-section .div2{
+       margin-top: 20rem;
+    }
+}
+
+
+
+@media screen and (max-width: 452px){
+    #footer{
+        height: 180vh;
+        
+   
+    }
+
+
+}
+
+@media screen and (max-width: 360px){
+    .apresentacao-conteiner h2{
+        font-size:30px;
+    }
 }
