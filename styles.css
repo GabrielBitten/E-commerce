@@ -1162,6 +1162,22 @@ Responsividade*/
         left: 5%;
 
     }
+    
+    .login{
+        position: absolute;
+        top:-20px;
+        height: 500px;
+        width: 400px;
+    
+    
+    }
+    .login form input{
+        padding: 12px;
+        width: 300px;
+        margin-bottom: 10px;
+        font-size: 15px;
+    
+    }
 }
 
 @media screen and (max-width: 452px){
@@ -1181,6 +1197,24 @@ Responsividade*/
   
         left: 10% !important;
      
+    }
+    .login{
+        position: absolute;
+        top:-20px;
+        height: 500px;
+        width: 320px;
+    
+    
+    }
+    .login form input{
+        padding: 12px;
+        width: 280px;
+        margin-bottom: 10px;
+        font-size: 15px;
+    
+    }
+    .login p{
+        font-size: 12px;
     }
 }
 @media screen and (max-width: 400px){
