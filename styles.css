@@ -1067,7 +1067,12 @@ Responsividade*/
     #categorias{
         height: 140vh;
         }
-      
+        .janela-carrinho{
+            top: 29%;
+            left: 22%;
+            margin: 0 auto;
+            margin-bottom: 150px;
+        }
 }
 @media screen and (max-width: 550px){
   #chose-category .title h1{
@@ -1079,6 +1084,13 @@ Responsividade*/
   #navbar{ 
     position: absolute;
     right: 0;
+}
+.janela-carrinho{
+    height: 500px;
+    width: 300px;
+    top: 12%;
+    left: 20% !important;
+ 
 }
 }
 @media screen and (max-width: 750px){
@@ -1096,6 +1108,11 @@ Responsividade*/
         margin-bottom: 50px;
         max-height: 270px;
       
+}
+.janela-carrinho{
+
+    left: 15%;
+
 }
 
 
@@ -1139,7 +1156,13 @@ Responsividade*/
 }
 
 
+@media screen and (max-width: 650px){
+    .janela-carrinho{
+  
+        left: 5%;
 
+    }
+}
 
 @media screen and (max-width: 452px){
     #footer{
@@ -1154,7 +1177,11 @@ Responsividade*/
     #liquidacao{
         font-size: 12px;
     }
-    
+    .janela-carrinho{
+  
+        left: 10% !important;
+     
+    }
 }
 @media screen and (max-width: 400px){
 #category-types{
@@ -1168,5 +1195,11 @@ Responsividade*/
     .apresentacao-conteiner h2{
         font-size:30px;
     }
-    
+    .janela-carrinho{
+        height: 500px;
+        width: 300px;
+        top: 12%;
+        left: 5% !important;
+     
+    }
 }
