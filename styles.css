@@ -429,6 +429,8 @@ ul.dropdown{
     height: 230px;
     position: absolute;
     bottom: 0;
+
+    
     
 }
 .carrinho-container button{
@@ -463,6 +465,7 @@ ul.dropdown{
     overflow-y: scroll;
   
     visibility: hidden;
+
 }
 .itens-carrinho.active{
     visibility: visible;
@@ -1046,11 +1049,28 @@ Responsividade*/
         gap: 10px;
     }
 
+    .login-register{
  
+    
+        right: 62%;
+     
+      
+  
+    
+    }
 }
 
 @media screen and (max-width: 950px){
+    .login-register{
  
+        top: 6%;
+        right:58%;
+        height: 500px;
+        width: 600px;
+      
+  
+    
+    }
 
 
     .div2 img{
@@ -1091,6 +1111,39 @@ Responsividade*/
     top: 12%;
     left: 20% !important;
  
+}
+.itens-carrinho{
+
+    height: 365px;
+
+}
+.carrinho-container{
+    height: 425px;
+
+    
+}
+.totalCarrinho{
+    font-size: 15px;
+
+}
+.carrinho-container button{
+    bottom: 5px;
+    right: 0px;   
+}
+.item-carrinho{
+  
+    height: 85px;
+ 
+}
+.login-register{
+ 
+    top: 6%;
+    right:54% !important;
+    height: 500px;
+    width: 450px;
+  
+
+
 }
 }
 @media screen and (max-width: 750px){
@@ -1144,16 +1197,28 @@ Responsividade*/
     transform: scale(0.8);
    
 }
-
-}
 .manual-btn{
+    display: none;
+    
+    
+ }
+ .navigation-auto{
    display: none;
    
-   
+ }
+
+ .login-register{
+ 
+    top: 6%;
+    right:54%;
+    height: 500px;
+    width: 600px;
+  
+
+
 }
-.navigation-auto{
-  display: none;
 }
+
 
 
 @media screen and (max-width: 650px){
@@ -1176,6 +1241,16 @@ Responsividade*/
         width: 300px;
         margin-bottom: 10px;
         font-size: 15px;
+    
+    }
+    .login-register{
+ 
+        top: 6%;
+        right:58%;
+        height: 500px;
+        width: 450px;
+      
+  
     
     }
 }
@@ -1215,6 +1290,20 @@ Responsividade*/
     }
     .login p{
         font-size: 12px;
+    }
+    .login-register{
+ 
+    
+        right:53% !important;
+        height: 500px;
+        width: 350px;
+
+    }
+    .login-register form input{
+      
+        width: 300px;
+        
+    
     }
 }
 @media screen and (max-width: 400px){

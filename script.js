@@ -252,7 +252,7 @@ function atualizarCarrinho() {
 
   const totalHTML =`
     <div class="carrinho-container">
-      <h2 class="totalCarrinho">Total:R$ ${total.toFixed(2)}</h2>
+      <h2 class="totalCarrinho">Total:R$ ${total.toFixed(2)}
     </div>
   `
   itens_section.innerHTML += totalHTML;
