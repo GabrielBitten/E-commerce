@@ -63,9 +63,9 @@ hr{
     border-radius: 50px;
     cursor: pointer;
     font-size: 15px;
+   
 
-
-    visibility: hidden;
+    visibility: visible;
     
 
 }
@@ -299,7 +299,7 @@ button{
     max-width: 150px;
     position: absolute;
     background-size: cover;
-    border: 1px solid black;
+    
     z-index: 1;
  
 }
@@ -1145,6 +1145,22 @@ Responsividade*/
 
 
 }
+
+
+.cadastro-produto-form{
+ 
+    height: 450px;
+    width: 400px;
+
+
+}
+.cadastro-produto-form input{
+  
+    width: 350px;
+
+
+}
+
 }
 @media screen and (max-width: 750px){
     #footer{
@@ -1303,6 +1319,17 @@ Responsividade*/
       
         width: 300px;
         
+    
+    }
+    .cadastro-produto-form{
+        width: 350px;
+
+    
+    }
+    .cadastro-produto-form input{
+       
+        width: 300px;
+      
     
     }
 }
