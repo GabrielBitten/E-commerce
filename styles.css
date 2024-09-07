@@ -48,9 +48,11 @@ hr{
    
     font-size: 18px;
     font-weight: 900;
+    
+  
 }
+
 #logo-div{
-   
     display: flex;
     align-items: center;
     width: auto;
@@ -63,9 +65,10 @@ hr{
     border-radius: 50px;
     cursor: pointer;
     font-size: 15px;
-   
+    position: absolute;
+    margin-left: 180px;
 
-    visibility: visible;
+    visibility: hidden;
     
 
 }
@@ -1158,6 +1161,17 @@ Responsividade*/
   
     width: 350px;
 
+
+}
+#logo{
+    color: transparent !important;
+}
+#cadastrar-produto{
+
+    margin-left: 60px;
+
+
+    
 
 }
 
